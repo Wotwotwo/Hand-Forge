@@ -12,14 +12,16 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	draw(3)
+	pass # Replace with function body.
+
+
+func draw( x : int ):
 	var t: Tween = create_tween()
-	for i in range(3):
+	for i in range(x):
 		var ins = preload("res://scenes/card_scene.tscn")
 		var card = ins.instantiate()
 		card.data = deck.pick_random()
 		card.position = Vector2( 564,229)
 		add_child(card)
 		t.tween_property(card,"position",Vector2(223+ ( 100 * i),189),0.2)
-		
-		pass
-	pass # Replace with function body.
