@@ -1,14 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdqg4l0crjc7k"]
+[gd_scene load_steps=3 format=3 uid="uid://bogjvssbsaxot"]
 
-[ext_resource type="PackedScene" uid="uid://dgs6asnhmx1qh" path="res://scenes/card_scene.tscn" id="1_aopc7"]
+[ext_resource type="PackedScene" uid="uid://bkpfuc8rreewr" path="res://scenes/card_scene.tscn" id="1_aopc7"]
+[ext_resource type="Script" path="res://scenes/debugtest.gd" id="1_vsv3p"]
 
 [node name="debugtest" type="Node2D"]
+script = ExtResource("1_vsv3p")
+metadata/_edit_horizontal_guides_ = [329.0, 171.0]
+metadata/_edit_vertical_guides_ = [564.0, 189.0]
 
 [node name="CardScene" parent="." instance=ExtResource("1_aopc7")]
-position = Vector2(173, 145)
+position = Vector2(35, 321)
 
-[node name="CardScene2" parent="." instance=ExtResource("1_aopc7")]
-position = Vector2(304, 157)
+[node name="Button" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 313.0
+offset_right = 631.0
+offset_bottom = 352.0
+text = "Draw 3 cards"
 
-[node name="CardScene3" parent="." instance=ExtResource("1_aopc7")]
-position = Vector2(217, 242)
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
