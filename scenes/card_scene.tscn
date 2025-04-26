@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgs6asnhmx1qh"]
+
+[ext_resource type="Script" path="res://script/card_scene.gd" id="1_u36uw"]
+[ext_resource type="Texture2D" uid="uid://luk2cf1dx5uk" path="res://assets/cards_frame.png" id="2_ckg2k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24bfp"]
+atlas = ExtResource("2_ckg2k")
+region = Rect2(0, 0, 46, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urmjb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24bfp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CardScene" type="Node2D"]
+script = ExtResource("1_u36uw")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_urmjb")
+
+[node name="collisionDetection" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 23.0
+offset_bottom = 32.0
+
+[connection signal="gui_input" from="collisionDetection" to="." method="_on_collision_detection_gui_input"]
+[connection signal="mouse_entered" from="collisionDetection" to="." method="_on_collision_detection_mouse_entered"]
+[connection signal="mouse_exited" from="collisionDetection" to="." method="_on_collision_detection_mouse_exited"]

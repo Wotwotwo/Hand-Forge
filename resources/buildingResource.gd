@@ -1,9 +1,6 @@
-extends Resource
+extends cardData
 class_name building
 
-@export var name : String
-@export var description : String
-@export var sprite : Texture2D
 @export var max_hp : int
 @export var buildtime : int
 

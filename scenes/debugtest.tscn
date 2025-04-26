@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdqg4l0crjc7k"]
+
+[ext_resource type="PackedScene" uid="uid://dgs6asnhmx1qh" path="res://scenes/card_scene.tscn" id="1_aopc7"]
+
+[node name="debugtest" type="Node2D"]
+
+[node name="CardScene" parent="." instance=ExtResource("1_aopc7")]
+position = Vector2(173, 145)
+
+[node name="CardScene2" parent="." instance=ExtResource("1_aopc7")]
+position = Vector2(304, 157)
+
+[node name="CardScene3" parent="." instance=ExtResource("1_aopc7")]
+position = Vector2(217, 242)
